@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | MercadoFresh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/mercadofresh_login.css') }}">
+</head>
+<body>
+  <main class="login-shell">
+    <h2 class="sr-only">Tela de login do MercadoFresh</h2>
+
+    <section class="page" aria-label="Login MercadoFresh">
+      <div class="left">
+        <div class="left-bg-circle c1"></div>
+        <div class="left-bg-circle c2"></div>
+        <div class="left-bg-circle c3"></div>
+
+        <div class="logo-area">
+          <div class="logo-icon">
+            <i class="ti ti-shopping-cart" aria-hidden="true"></i>
+          </div>
+          <span class="logo-name">MercadoFresh</span>
+        </div>
+
+        <div class="left-mid">
+          <div class="hero-emojis">
+            <div class="emoji-pill">🥦</div>
+            <div class="emoji-pill">🍎</div>
+            <div class="emoji-pill">🥕</div>
+          </div>
+          <p class="left-title">Entrega rápida<br />na sua porta</p>
+          <p class="left-sub">Os melhores produtos frescos com entrega em até 1 hora. Sem taxa mínima!</p>
+        </div>
+
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-dot">
+              <i class="ti ti-clock" aria-hidden="true"></i>
+            </div>
+            Entrega em até 1 hora
+          </div>
+          <div class="feature-item">
+            <div class="feature-dot">
+              <i class="ti ti-leaf" aria-hidden="true"></i>
+            </div>
+            Produtos sempre frescos
+          </div>
+          <div class="feature-item">
+            <div class="feature-dot">
+              <i class="ti ti-shield-check" aria-hidden="true"></i>
+            </div>
+            Pagamento seguro
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="form-header">
+          <div class="form-tag">
+            <i class="ti ti-lock" aria-hidden="true"></i>
+            Acesso seguro
+          </div>
+          <h1 class="form-title">Bem-vindo de volta!</h1>
+          <p class="form-sub">Entre na sua conta para continuar comprando</p>
+        </div>
+
+        <form class="login-form">
+          <div class="field-block">
+            <label class="field-label" for="email">E-mail</label>
+            <div class="input-wrap">
+              <i class="ti ti-mail input-icon" aria-hidden="true"></i>
+              <input type="email" id="email" placeholder="seu@email.com" autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="field-block">
+            <label class="field-label" for="senha">Senha</label>
+            <div class="input-wrap">
+              <i class="ti ti-lock input-icon" aria-hidden="true"></i>
+              <input type="password" id="senha" placeholder="••••••••" autocomplete="current-password" />
+              <button class="password-toggle" type="button" aria-label="Mostrar senha">
+                <i class="ti ti-eye" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="row-options">
+            <label class="remember">
+              <input type="checkbox" /> Lembrar de mim
+            </label>
+            <a href="#" class="forgot">Esqueci minha senha</a>
+          </div>
+
+          <button class="btn-login" type="submit">
+            <i class="ti ti-login" aria-hidden="true"></i>
+            Entrar na conta
+          </button>
+        </form>
+
+        <div class="divider">
+          <div class="div-line"></div>
+          <span class="div-text">ou acesse com</span>
+          <div class="div-line"></div>
+        </div>
+
+        <div class="social-row">
+          <button class="btn-social" type="button">
+            <i class="ti ti-brand-google google-icon" aria-hidden="true"></i>
+            Google
+          </button>
+          <button class="btn-social" type="button">
+            <i class="ti ti-brand-apple apple-icon" aria-hidden="true"></i>
+            Apple
+          </button>
+        </div>
+
+        <p class="signup-line">
+          Não tem conta? <a href="#" class="signup-link">Cadastre-se grátis</a>
+        </p>
+      </div>
+    </section>
+  </main>
+  
+  <script src="{{ url_for('static', filename='js/mercadofresh_login.js') }}"></script>
+</body>
+</html>
