@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MercadoFresh – Compras Online</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <span class="logo-icon">
+        <img src="logo/logoMercado.png" alt="">
+      </span>
+    </div>
+    <div class="search-wrap">
+      <span class="search-icon">
+        <img src="icons/search_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="SearchIcon">
+      </span>
+      <input type="text" id="searchInput" placeholder="Buscar produtos, marcas..." />
+      <button class="search-btn" onclick="doSearch()">Buscar</button>
+    </div>
+    <div class="header-actions">
+      <button class="icon-btn" title="Minha conta">
+        <img src="icons/person_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="Person">
+      </button>
+      <button class="icon-btn" title="Favoritos">🤍</button>
+      <button class="icon-btn" title="Carrinho" onclick="toggleCart()">
+        🛒
+        <span class="badge" id="cartBadge">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="nav-bar">
+  <div class="nav-inner">
+    <a class="nav-item active">Início</a>
+    <a class="nav-item">Hortifruti</a>
+    <a class="nav-item">Carnes</a>
+    <a class="nav-item">Laticínios</a>
+    <a class="nav-item">Padaria</a>
+    <a class="nav-item">Bebidas</a>
+    <a class="nav-item">Limpeza</a>
+    <a class="nav-item">Higiene</a>
+    <a class="nav-item">Congelados</a>
+    <a class="nav-item">Promoções</a>
+  </div>
+</nav>
+
+<main class="page">
+
+  <div class="banner">
+    <div class="banner-text">
+      <h1>Entrega rápida<br>na sua porta 🚀</h1>
+      <p>Os melhores produtos frescos com entrega em até 1 hora. Sem taxa mínima!</p>
+      <a class="banner-cta" onclick="showToast('Explorando promoções...')">Ver ofertas do dia</a>
+    </div>
+    <div class="banner-emoji">🥦🍅🥕</div>
+  </div>
+
+  <div class="chips">
+    <button class="chip active" onclick="filterChip(this, 'todos')">🏠 Todos</button>
+    <button class="chip" onclick="filterChip(this, 'frutas')">🍎 Frutas</button>
+    <button class="chip" onclick="filterChip(this, 'legumes')">🥦 Legumes</button>
+    <button class="chip" onclick="filterChip(this, 'laticinios')">🥛 Laticínios</button>
+    <button class="chip" onclick="filterChip(this, 'carnes')">🥩 Carnes</button>
+    <button class="chip" onclick="filterChip(this, 'padaria')">🍞 Padaria</button>
+    <button class="chip" onclick="filterChip(this, 'bebidas')">🥤 Bebidas</button>
+  </div>
+
+  <div class="section-header">
+    <h2 class="section-title">Mais Vendidos</h2>
+    <a class="see-all">Ver todos →</a>
+  </div>
+
+  <div class="product-grid" id="productGrid">
+    </div>
+
+  <div class="banner-sm" onclick="showToast('Abrindo promoção especial...')">
+    <div class="banner-sm-emoji">⚡</div>
+    <div class="banner-sm-text">
+      <h3>Ofertas relâmpago – Hoje até 23h</h3>
+      <p>Descontos de até 50% em produtos selecionados. Aproveite agora!</p>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <h2 class="section-title">Combos & Cestas</h2>
+    <a class="see-all">Ver todos →</a>
+  </div>
+
+  <div class="featured-grid" id="featuredGrid">
+    </div>
+
+</main>
+
+<nav class="bottom-nav">
+  <div class="bottom-nav-inner">
+    <button class="nav-tab active"><span class="nav-tab-icon">🏠</span>Início</button>
+    <button class="nav-tab"><span class="nav-tab-icon">🎮</span>Jogos</button>
+    <button class="nav-tab"><span class="nav-tab-icon">🎁</span>Ganhe +</button>
+    <button class="nav-tab"><span class="nav-tab-icon">📋</span>Lista</button>
+    <button class="nav-tab" onclick="toggleCart()"><span class="nav-tab-icon">🧾</span>Pedidos</button>
+  </div>
+</nav>
+
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<aside class="cart-sidebar" id="cartSidebar">
+  <div class="cart-head">
+    <h2>🛒 Meu Carrinho</h2>
+    <button class="cart-close" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty">
+      <div class="empty-emoji">🛒</div>
+      <p>Seu carrinho está vazio.<br>Adicione produtos para começar!</p>
+    </div>
+  </div>
+  <div class="cart-foot">
+    <div class="cart-total">
+      <span>Total</span>
+      <span id="cartTotal">R$ 0,00</span>
+    </div>
+    <button class="checkout-btn" onclick="showToast('Redirecionando para pagamento...')">Finalizar compra →</button>
+  </div>
+</aside>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
