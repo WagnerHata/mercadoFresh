@@ -5,28 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MercadoFresh – Compras Online</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
 <header>
   <div class="header-inner">
     <div class="logo">
-      <span class="logo-icon">
-        <img src="logo/logoMercado.png" alt="">
-      </span>
+      <span class="logo-icon">🛒</span>
+      <span>MercadoFresh</span>
     </div>
     <div class="search-wrap">
-      <span class="search-icon">
-        <img src="icons/search_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="SearchIcon">
-      </span>
+      <span class="search-icon">🔍</span>
       <input type="text" id="searchInput" placeholder="Buscar produtos, marcas..." />
       <button class="search-btn" onclick="doSearch()">Buscar</button>
     </div>
     <div class="header-actions">
-      <button class="icon-btn" title="Minha conta">
-        <img src="icons/person_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="Person">
-      </button>
+      <button class="icon-btn" title="Minha conta">👤</button>
       <button class="icon-btn" title="Favoritos">🤍</button>
       <button class="icon-btn" title="Carrinho" onclick="toggleCart()">
         🛒
@@ -131,6 +126,6 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="script.js"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
